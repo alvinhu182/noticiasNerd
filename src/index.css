@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --brand-bg: #0C0C0E;
+  --brand-bg-alt: #09090C;
+  --brand-surface: #16161A;
+  --brand-accent: #8B5CF6;
+  --brand-cyan: #06B6D4;
+  --brand-text-p: #F8FAFC;
+  --brand-text-s: #94A3B8;
+  --brand-border: rgba(255, 255, 255, 0.08);
+  --grid-color: rgba(255, 255, 255, 0.03);
+  
+  --cat-games-bg: rgba(99, 102, 241, 0.1);
+  --cat-games-text: rgb(129, 140, 248);
+  --cat-games-border: rgba(99, 102, 241, 0.2);
+
+  --cat-cinema-bg: rgba(236, 72, 153, 0.1);
+  --cat-cinema-text: rgb(244, 114, 182);
+  --cat-cinema-border: rgba(236, 72, 153, 0.2);
+
+  --cat-tech-bg: rgba(6, 182, 212, 0.1);
+  --cat-tech-text: #06B6D4;
+  --cat-tech-border: rgba(6, 182, 212, 0.2);
+}
+
+.light {
+  --brand-bg: #F8FAFC;
+  --brand-bg-alt: #F1F5F9;
+  --brand-surface: #FFFFFF;
+  --brand-accent: #6D28D9;
+  --brand-cyan: #0891B2;
+  --brand-text-p: #0F172A;
+  --brand-text-s: #475569;
+  --brand-border: rgba(15, 23, 42, 0.08);
+  --grid-color: rgba(15, 23, 42, 0.03);
+  
+  --cat-games-bg: rgba(109, 40, 217, 0.08);
+  --cat-games-text: rgb(109, 40, 217);
+  --cat-games-border: rgba(109, 40, 217, 0.15);
+
+  --cat-cinema-bg: rgba(190, 24, 74, 0.08);
+  --cat-cinema-text: rgb(190, 24, 74);
+  --cat-cinema-border: rgba(190, 24, 74, 0.15);
+
+  --cat-tech-bg: rgba(8, 145, 178, 0.08);
+  --cat-tech-text: rgb(8, 145, 178);
+  --cat-tech-border: rgba(8, 145, 178, 0.15);
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-bg-alt: var(--brand-bg-alt);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-text-p: var(--brand-text-p);
+  --color-brand-text-s: var(--brand-text-s);
+  --color-brand-border: var(--brand-border);
+
+  --color-cat-games-bg: var(--cat-games-bg);
+  --color-cat-games-text: var(--cat-games-text);
+  --color-cat-games-border: var(--cat-games-border);
+
+  --color-cat-cinema-bg: var(--cat-cinema-bg);
+  --color-cat-cinema-text: var(--cat-cinema-text);
+  --color-cat-cinema-border: var(--cat-cinema-border);
+
+  --color-cat-tech-bg: var(--cat-tech-bg);
+  --color-cat-tech-text: var(--cat-tech-text);
+  --color-cat-tech-border: var(--cat-tech-border);
+}
+
+/* Custom scrollbar and aesthetics matching Immersive UI */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--brand-bg);
+    color: var(--brand-text-p);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Scrollbar Customization */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--brand-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--brand-border);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-accent);
+  }
+}
+
+/* Custom utility styles for high-fidelity Geek aesthetics */
+.neon-glow-purple {
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.4), 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.neon-glow-cyan {
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.4), 0 0 20px rgba(6, 182, 212, 0.2);
+}
+
+.radial-grid-bg {
+  background-image: radial-gradient(circle at 1px 1px, var(--grid-color) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Side highlight border matching Immersive UI cards */
+.news-card-hover-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: var(--brand-accent);
+  transition: height 0.3s ease;
+}
+
+.news-card-hover-border:hover::before {
+  height: 100%;
+}
+

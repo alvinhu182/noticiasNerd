@@ -1,0 +1,6 @@
+{
+  "name": "Portal de Notícias Geek",
+  "description": "Landing page de alta conversão para portal de notícias sobre o universo Nerd, Geek, Cultura Pop e Tecnologia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
